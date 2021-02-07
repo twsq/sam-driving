@@ -38,8 +38,13 @@ First, download [CARLA Gear](https://drive.google.com/open?id=1X52PXqT0phEi5WEWA
 Then, build the Docker image by running
 ```
 git clone https://github.com/carla-simulator/carla.git <carla_folder>
+cd <carla_folder>
+git checkout cfc6ee6
+git reset --hard
+cd ../
 docker image build -f <carla_folder>/Util/Docker/Release.Dockerfile -t carlagear <path-to-carlagear/>CarlaGear
 ```
+If you are not using Ubuntu 16.04, modify the first line of the Release Dockerfile accordingly before running the final line above to build the Docker image.
 
 ## Data Collection
 Data can be collected using the [CARLA 0.8.4 data collector](https://github.com/carla-simulator/data-collector). Both data collection and model evaluation use CARLA Gear, a single gear version of CARLA 0.8.4. 
